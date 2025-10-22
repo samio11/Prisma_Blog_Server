@@ -1,9 +1,11 @@
 import express, { Application, Request, Response } from "express";
+import compression from "compression";
 import cors from "cors";
 import { rootRoute } from "./routes";
 const app: Application = express();
 app.use(express.json());
 app.use(cors());
+app.use(compression());
 
 app.use("/api/v1", rootRoute);
 
